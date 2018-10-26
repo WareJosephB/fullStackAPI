@@ -13,8 +13,12 @@ function httpGet(url){
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", url, false);
 xmlhttp.send(null);
-document.getElementById("output").innerHTML = drawTable(xmlhttp.response);
+return xmlhttp.response;
 }
+
+function TableGet(url){
+var table = drawTable(httpGet(url))
+document.getElementById("output").innerHTML = table;}
 
 function drawTable(data) {
     for (var i = 0; i < data.length; i++) {
@@ -33,7 +37,7 @@ function drawRow(rowData) {
 
 <p id="output"></p>
 
-<input type = "button" onclick = 'httpGet("http://localhost:8080/cinema-app/api/movie/getMovie/All")' value = "Get All Films">
+<input type = "button" onclick = 'TableGet("http://localhost:8181/cinema-app/api/movie/getMovie/All")' value = "Get All Films">
 
 </body>
 </html>
