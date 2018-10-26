@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type = "text/javascript">
+function Thanks(){
+	alert("Thanks for voting!");
+	name = document.getElementById("username").value;
+if (name != "") {
+name = " " + name;
+}
+	document.getElementById("ohhimarque").innerHTML = "Thanks for voting"+name+"!";}
+</script>
+</head>
+<body>
+
+<a href = "index.html"> haha butts </a>
+<marquee id = "ohhimarque">Haha butts</marquee>
+<form><div>
+Name : <input type = "text" name = "username" id = "username"><br>
+<h6> Rating </h6>
+Excellent: <input type = "radio" name = "site rating" value = "Excellent"><br>
+Hecking Sick: <input type = "radio" name = "site rating" value = "Hecking Sick"><br>
+<input type = "button" onclick = "Thanks()" value = "Submit">
+</div> 
+</form>
+
+<div id = "Haha"></div>
+
+</body>
+</html>

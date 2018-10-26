@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<marquee> haha butts </marquee>
+
+<a href = "link.html"> Please click here to rate this website </a>
+
+<script type = "text/javascript">
+
+function httpGet(url){
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", url, false);
+xmlhttp.send(null);
+document.getElementById("output").innerHTML = drawTable(xmlhttp.response);
+}
+
+function drawTable(data) {
+    for (var i = 0; i < data.length; i++) {
+        drawRow(data[i]);
+    }
+}
+
+function drawRow(rowData) {
+    var row = $("<tr />")
+    $("#personDataTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
+    row.append($("<td>" + rowData.id + "</td>"));
+    row.append($("<td>" + rowData.firstName + "</td>"));
+    row.append($("<td>" + rowData.lastName + "</td>"));}
+</script>
+
+
+<p id="output"></p>
+
+<input type = "button" onclick = 'httpGet("http://localhost:8080/cinema-app/api/movie/getMovie/All")' value = "Get All Films">
+
+</body>
+</html>
