@@ -1,8 +1,7 @@
-function httpGet(myurl) {
+function httpGet(url) {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", myurl, false);
+		xmlHttp.open("GET", url, false);
 		xmlHttp.send(null);
-
 		document.getElementById("output").innerHTML = xmlHttp.response;
 }
 
@@ -61,7 +60,7 @@ function displayJSON(x) {
 
 function getTable() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "http://localhost:8181/cinema-app/api/movie/getAllMovies", false);
+	xmlHttp.open("GET", "http://localhost:8181/cinema-app/api/movie/getMovie/All", false);
 	xmlHttp.send(null);
 	var string = '';
 	var array = eval(xmlHttp.response);

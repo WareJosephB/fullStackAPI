@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head><script type="text/javascript" language='javascript' src='scripts.js'></head>
+
+
 <body>
 
 <marquee> Seven Eggs Bert Avocados </marquee>
 
 <a href="add.html"><input type="button" value="Add new movie" /></a><br>
-		<table id="Table">
-		</table>
-		<script>getTable()</script>
 
+<table id="Table"></table>
+	
+<script>getTable()</script>
 
+<input type = "text" id = "delete">
 <input type = "text" id = "get">
 
 <input type = "button" onclick = 'TableGet("http://localhost:8181/cinema-app/api/movie/getMovie/All")' value = "Get All Films">
