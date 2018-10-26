@@ -12,7 +12,7 @@ function getGetVal() {
 
 function httpGetSingle() {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", "http://localhost:8081/api-0.0.1-SNAPSHOT/api/movie/getMovie/" + getGetVal(), false);
+		xmlHttp.open("GET", "http://localhost:8181/cinema-app/api/movie/getMovie/" + getGetVal(), false);
 		xmlHttp.send(null);
 
 		displayJSON(xmlHttp.response);
@@ -24,7 +24,7 @@ function getDeleteVal() {
 
 function httpDelete(x) {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("DELETE", "http://localhost:8081/api-0.0.1-SNAPSHOT/api/movie/deleteMovie/" + x, false);
+		xmlHttp.open("DELETE", "http://localhost:8181/cinema-app/api/movie/deleteMovie/" + x, false);
 		xmlHttp.send(null);
 
 		getTable();
@@ -44,7 +44,7 @@ function getRating() {
 
 function addMovie() {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("POST", "http://localhost:8081/api-0.0.1-SNAPSHOT/api/movie/addMovie", false);
+		xmlHttp.open("POST", "http://localhost:8181/cinema-app/api/movie/addMovie", false);
 		xmlHttp.setRequestHeader('Content-Type', 'application/json');
 		xmlHttp.send(JSON.stringify({
 			title: getTitle(),
@@ -56,12 +56,12 @@ function addMovie() {
 function displayJSON(x) {
 		var json = JSON.parse(x);
 
-		document.getElementById("Output").innerHTML = "id: " + json.id + "<br>Title: " + json.title  + "<br>Genre: " + json.genre + "<br>Age Rating: " + json.ageRating;
+		document.getElementById("output").innerHTML = "id: " + json.id + "<br>Title: " + json.title  + "<br>Genre: " + json.genre + "<br>Age Rating: " + json.ageRating;
 }
 
 function getTable() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "http://localhost:8081/api-0.0.1-SNAPSHOT/api/movie/getAllMovies", false);
+	xmlHttp.open("GET", "http://localhost:8181/cinema-app/api/movie/getAllMovies", false);
 	xmlHttp.send(null);
 	var string = '';
 	var array = eval(xmlHttp.response);
