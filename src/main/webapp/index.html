@@ -14,9 +14,12 @@
 <script>getTable()</script>
 
 <input type = "text" id = "delete">
+<input type = "button" onclick = 'httpDelete(getDeleteVal())' value = "Delete film">
+<br/>
 <input type = "text" id = "get">
+<a href="add.html"><input type = "button" value = "Add film"></a>
 
-<input type = "button" onclick = 'TableGet("http://localhost:8181/cinema-app/api/movie/getMovie/All")' value = "Get All Films">
+
 <p id="output"></p>
 
 
